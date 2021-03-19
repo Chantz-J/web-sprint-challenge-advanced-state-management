@@ -11,15 +11,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 class App extends Component {
-  constructor(props) {
+  constructor() {
     super()
-    this.state = {
-      smurfs: ''
-    }
+    // this.state = {
+    //   smurfs: ''
+    // }
   }
 
   componentDidMount(){
-    fetchSmurfs()
+    this.props.fetchSmurfs()
   }
 
 
