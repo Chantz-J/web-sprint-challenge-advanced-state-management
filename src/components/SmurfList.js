@@ -16,8 +16,8 @@ import Smurf from './Smurf';
     }
 
     return(<div className="listContainer">
-        <Smurf smurf={testSmurf}/>
-    </div>);
+             <Smurf smurf={testSmurf}/>
+          </div>);
 }
 
 export default SmurfList;
