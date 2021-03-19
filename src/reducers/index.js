@@ -1,4 +1,4 @@
-import { FETCH_SMURFS_START, FETCH_SMURFS_SUCCESS, FETCH_SMURFS_FAILED } from '../actions'
+import { FETCH_SMURFS_START, FETCH_SMURFS_SUCCESS, FETCH_SMURFS_FAILED, ADD_NEW_SMURF } from '../actions'
 
 
 export const initialState = {
@@ -24,6 +24,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 errors: action.payload
+            }
+        case ADD_NEW_SMURF: 
+            return {
+                ...state,
+                smurfs: [...state.smurfs, action.payload]
             }
         default:
             return state
