@@ -11,12 +11,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super()
-    // this.state = {
-    //   smurfs: ''
-    // }
-  }
 
   componentDidMount(){
     this.props.fetchSmurfs()
