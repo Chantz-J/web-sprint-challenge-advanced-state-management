@@ -23,11 +23,13 @@ const reducer = (state = initialState, action) => {
         case FETCH_SMURFS_FAILED:
             return {
                 ...state,
+                isLoading: false,
                 errors: action.payload
             }
         case ADD_NEW_SMURF: 
             return {
                 ...state,
+                isLoading: false,
                 smurfs: [...state.smurfs, action.payload]
             }
         default:
