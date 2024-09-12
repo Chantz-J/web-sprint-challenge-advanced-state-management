@@ -1,17 +1,25 @@
-import React from 'react';
+import React from 'react'
+import { connect } from 'react-redux'
 
 const Smurf = (props)=> {
-    const { smurf } = props;
+    const { smurf, isLoading } = props
     
     return(<div data-testid="smurf" className="card">
         <div className="card-body">
-        <h3 className="card-title">{smurf.name}</h3>
+        <h3 className="card-title">{isLoading ? 'Loading' : smurf.name}</h3>
             <hr/>
-            <p className="card-text"><b>Position:</b> {smurf.position}</p>
-            <p className="card-text"><b>Nickname:</b> {smurf.nickname}</p>
-            <p className="card-text"><b>Description:</b> {smurf.description}</p>
+            <p className="card-text"><b>Position:</b> {isLoading ? 'Loading' : smurf.position}</p>
+            <p className="card-text"><b>Nickname:</b> {isLoading ? 'Loading' : smurf.nickname}</p>
+            <p className="card-text"><b>Description:</b> {isLoading ? 'Loading' : smurf.description}</p>
         </div>
     </div>);
 }
 
-export default Smurf;
+const mapToStateProps = state => {
+    return {
+      smurfs: state.smurfs,
+      isLoading: state.isLoading
+    }
+  }
+
+export default connect(mapToStateProps,{})(Smurf);
